@@ -396,6 +396,9 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
 			//将配置文件中的字符串转为Document
 			Document doc = doLoadDocument(inputSource, resource);
+
+			//Document转BeanDefinition
+			//配置文件中的Bean定义转BeanDefinition的核心方法
 			int count = registerBeanDefinitions(doc, resource);
 			if (logger.isDebugEnabled()) {
 				logger.debug("Loaded " + count + " bean definitions from " + resource);
